@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'appicon';
+  src:url('../fonts/appicon.eot?9y31kb');
+  src:url('../fonts/appicon.eot?#iefix9y31kb') format('embedded-opentype'),
+    url('../fonts/appicon.ttf?9y31kb') format('truetype'),
+    url('../fonts/appicon.woff?9y31kb') format('woff'),
+    url('../fonts/appicon.svg?9y31kb#appicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ico-"], [class*=" ico-"] {
+  font-family: 'appicon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-logo-btn:before {
+  content: "\e602";
+}
+.ico-carr-left:before {
+  content: "\e600";
+}
+.ico-carr-right:before {
+  content: "\e601";
+}
+.ico-angle-left:before {
+  content: "\e603";
+}
+.ico-angle-right:before {
+  content: "\e604";
+}
+.ico-search-btn:before {
+  content: "\e605";
+}
+
+
+.thin {
+	font-family: 'id-Thin';
+}
+.light {
+	font-family: 'id-Light';
+}
+.book {
+	font-family: 'id-Book';
+}
+.med {
+	font-family: 'id-Medium';
+}
+.bold {
+	font-family: 'id-Bold';
+}
