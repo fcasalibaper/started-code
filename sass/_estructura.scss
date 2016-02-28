@@ -1,13 +1,7 @@
-body {
-	background-color: $blanco;
-	color: $gris1;
-	font-size: 14px;
+body {	
+	font-size: 14px;	
 }
 
 .container {
-	@include break(lg){
-		max-width: 1170px;
-	}
+	max-width: 850px;
 }
-// fin container general
-

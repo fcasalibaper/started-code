@@ -1,0 +1,282 @@
+// modal
+.modal-backdrop {
+	background-color: transparent;
+}
+.modal {
+	// news
+	&_news {
+		$mRadius 	: 0;
+		$colorX		: $gris1;		
+		$bgContent: $beish;
+		$fzX			: 4em;
+		$pHead		: 45px;
+		// forms
+		$inputText: $gris1;		
+
+		.modal-dialog {
+			@include break(xs){
+				max-width: 85%;
+			}
+			@include break(sm){
+				max-width: 460px;
+			}
+		}
+		.modal-content {
+			@include materialShadow(2);
+			background-color: $bgContent;
+			@include border-radius($mRadius);
+		}
+		.modal-header {
+			position: relative;
+			//@include linear-gradient(to bottom, darken($celesteO, 5%) 65%, $celesteC);
+			background-color: darken($celesteO, 5%);
+			padding: 0;
+
+			.close {
+				position: absolute;
+				right: -1.1em;
+				top: 0;
+				cursor: pointer;
+				color: $colorX;			
+				@include opacity(1);
+				@include text-shadow(0, 0, 0, transparent);
+				@include break(xs){
+					font-size: $fzX/1.5;
+				}
+				@include break(sm){
+					font-size: $fzX;
+				}
+			}
+
+			.modal-title {			
+				color: $blanco;
+				letter-spacing: 0.03em;
+				@extend .thin;
+				@include break(xs){
+					padding: $pHead/2;
+					font-size: 2.5rem;
+				}
+				@include break(sm){
+					padding: $pHead;
+				}
+				small {				
+					//letter-spacing: 0;
+					margin-top: 0.7em;
+					color: $blanco;
+					display: block;
+					line-height: 1.2;
+				}
+			}
+
+			.linea {
+				position: absolute;
+				bottom: 0px;
+				left: $pHead;
+				width: 1.5em;
+				height: 2px;			
+			}
+		}
+
+		.modal-body {
+			@include break(xs){
+				padding: $pHead/2;
+			}
+			@include break(sm){
+				padding: $pHead;
+			}
+			.form-group {
+				position: relative;
+				input {
+					position: relative;
+					@extend .book;					
+					color: $inputText;				
+					@include break(xs){
+						font-size: 1.5em;
+					}
+					@include break(sm){
+						font-size: 1.5em;
+					}
+					@include break(md){
+						font-size: 1.7em;
+					}
+					&[id="nombre"] {					
+						&:focus {
+							&:valid + span:after {
+						  	position: absolute;
+						  	top: 0;
+								right: 0;
+						    content: '¡Lindo nombre!';
+						    color: $celesteO;
+						    @include opacity(1);
+						    @include transform(translateY(10px));
+						  }
+						  &:invalid + span:after {
+						  	position: absolute;
+						    content: 'No parece ser un nombre válido.';
+						    color: #c00;
+						    @include opacity(1);
+						  }
+					  }
+					}
+					&[type="email"] {
+						&:focus {
+							&:invalid + span:after {
+						  	position: absolute;
+						    content: 'Parece no ser un mail válido.';
+						    color: #c00;
+						    @include opacity(1);
+						  }
+						}
+					}
+				}
+				input:focus {				  
+				}
+
+				// mensajes
+				span:after {
+					position: absolute;				
+					@extend .book;				
+					font-size: 1.30em;
+					line-height: 1.45em;				
+				}
+			}
+			button {
+				clear: both;
+				float: right;
+			}
+		}
+
+		.modal-footer {}
+	}
+	// media
+	&_media {
+
+		$mRadius 	: 0;
+		$colorX		: $gris1;		
+		$bgContent: $beish;
+		$fzX			: 4em;
+		$pHead		: 0;
+		// forms
+		$inputText: $gris1;		
+
+		.modal-dialog {
+			@include break(xs){
+				max-width: 85%;
+			}
+		}
+		.modal-content {
+			@include materialShadow(2);
+			background-color: $bgContent;
+			@include border-radius($mRadius);
+		}
+		.modal-header {
+			position: relative;
+			//@include linear-gradient(to bottom, darken($celesteO, 5%) 65%, $celesteC);
+			padding: 0;
+			height: 0;
+
+			.close {
+				position: absolute;
+				right: -1.1em;
+				top: 0;
+				cursor: pointer;
+				color: $colorX;			
+				@include opacity(1);
+				@include text-shadow(0, 0, 0, transparent);
+				@include break(xs){
+					font-size: $fzX/1.5;
+				}
+				@include break(sm){
+					font-size: $fzX;
+				}
+			}
+
+			.modal-title {			
+				color: $blanco;
+				letter-spacing: 0.03em;
+				@extend .thin;
+				@include break(xs){
+					padding: $pHead/2;
+					font-size: 2.5rem;
+				}
+				@include break(sm){
+					padding: $pHead;
+				}
+				small {				
+					//letter-spacing: 0;
+					margin-top: 0.7em;
+					color: $blanco;
+					display: block;
+					line-height: 1.2;
+				}
+			}
+
+			.linea {
+				position: absolute;
+				bottom: 0px;
+				left: $pHead;
+				width: 1.5em;
+				height: 2px;			
+			}
+		}
+
+		.modal-body {
+			@include break(xs){
+				padding: $pHead/2;
+			}
+			@include break(sm){
+				padding: $pHead;
+			}
+			.form-group {
+				position: relative;
+				input {
+					position: relative;
+					@extend .book;
+					font-size: 2em;
+					color: $inputText;				
+					&[id="nombre"] {					
+						&:focus {
+							&:valid + span:after {
+						  	position: absolute;
+						  	top: 0;
+								right: 0;
+						    content: '¡Lindo Nombre!';
+						    color: $celesteO;
+						    @include opacity(1);
+						    @include transform(translateY(10px));
+						  }
+					  }
+					}
+				}
+				input:focus {  
+
+				  &:invalid + span:after {
+				  	position: absolute;
+				    content: 'Parece no ser un mail válido.';
+				    color: #c00;
+				    @include opacity(1);
+				  }
+				}
+
+				// mensajes
+				span:after {
+					position: absolute;				
+					@extend .book;				
+					font-size: 1.30em;
+					line-height: 1.45em;				
+				}
+			}
+			button {
+				clear: both;
+				float: right;
+			}
+		}
+
+		.modal-footer {}
+	}
+}
+
+// center modal
+.modal-open .modal {
+	margin-top: 30px;
+}

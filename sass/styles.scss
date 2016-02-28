@@ -1,3 +1,9 @@
+/////////////////////////////////////
+//                                 //
+//       Última actualización      //
+//            27/05/2016           //
+//                                 //
+/////////////////////////////////////
 // MIXIMS
 // @import 'compass';
 @import '_bourbon';
@@ -8,6 +14,8 @@
 /* Personal - utiles*/
 @import 'text';
 @import '_utiles';
+@import '_carousel';
 @import '_forms';
+@import '_modals';
 /* ESTRUCTURA GENERAL */
 @import '_estructura';

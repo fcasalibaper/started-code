@@ -1,55 +1,106 @@
-$fstxt: 2.5em;
+$txth: 4.7em;
 h1 {	
-	span {
-	}
+	line-height: 1.0;	
+	margin:0;
+	position: relative;
 	@include break(xs){
-		font-size: ($fstxt)-1;
+		font-size: ($txth)-1.6;
 	}
 	@include break(sm){
-		font-size: ($fstxt)-0.5;
+		font-size: ($txth)-1;
 	}
 	@include break(md){
-		font-size: $fstxt;
+		font-size: $txth;
+	}
+	small {
+		font-size: 0.35em;
 	}
 }
 
 h2 {
+	line-height: 1;
+	margin:0;
+	position: relative;
 	@include break(xs){
-		font-size: ($fstxt)-1.2;
+		font-size: ($txth)-2.2;
 	}
 	@include break(sm){
-		font-size: ($fstxt)-1.1;
+		font-size: ($txth)-2.1;
 	}
 	@include break(md){
-		font-size: ($fstxt)-1.0;
+		font-size: ($txth)-2.0;
+	}
+	small {
+		font-size: 0.7em;
 	}
 }
 
 h3 {
+	line-height: 1.15;
+	margin:0;
+	position: relative;
 	@include break(xs){
-		font-size: ($fstxt)-1.9;
+		font-size: ($txth)-2.93;
 	}
 	@include break(sm){
-		font-size: ($fstxt)-1.3;
+		font-size: ($txth)-2.85;
 	}
 	@include break(md){
-		font-size: ($fstxt)-1.2;
+		font-size: ($txth)-2.65;
 	}
 }
 
-p {
+h4 {
+	line-height: 1.15;
+	margin:0;
+	position: relative;
+	@include break(xs){
+		font-size: ($txth)-2.7;
+	}
+	@include break(sm){
+		font-size: ($txth)-3.2;
+	}
+	@include break(md){
+		font-size: ($txth)-3.2;
+	}
+}
+h5 {
+	line-height: 1.15;
+	margin:0;
+	position: relative;
+	@include break(xs){
+		font-size: ($txth)-2.25;
+	}
+	@include break(sm){
+		font-size: ($txth)-2.15;
+	}
+	@include break(md){
+		font-size: ($txth)-2;
+	}
+}
+
+p {	
+	line-height: 1.2;
 	&.txt9 {
-		$p: 9px;				
+		$p: 9px;
+		@extend .roblight;
+		margin:0;
+		position: relative;
+				
 		font-size: $p;		
 	}
 
 	&.txt13 {
-		$p: 13.5px;		
+		$p: 13.5px;
+		@extend .roblight;
+		margin:0;
+		position: relative;
+		
 		@include break(xs){
 			font-size: $p;
 		}
 		@include break(sm){
-			font-size: ($p)-1;
+			font-size: $p - 1;
 		}
 		@include break(md){
 			font-size: $p;
@@ -58,11 +109,15 @@ p {
 
 	&.txt13 {
 		$p: 13.5px;
+		@extend .roblight;
+		margin:0;
+		position: relative;
+		
 		@include break(xs){
 			font-size: $p;
 		}
 		@include break(sm){
-			font-size: ($p)-1;
+			font-size: $p - 1;
 		}
 		@include break(md){
 			font-size: $p;
@@ -78,7 +133,7 @@ p {
 			font-size: $p;
 		}
 		@include break(sm){
-			font-size: ($p)-1;
+			font-size: $p - 1;
 		}
 		@include break(md){
 			font-size: $p;
@@ -87,11 +142,15 @@ p {
 
 	&.txt15 {
 		$p: 15px;
+		@extend .roblight;
+		margin:0;
+		position: relative;
+		
 		@include break(xs){
 			font-size: $p;
 		}
 		@include break(sm){
-			font-size: ($p)-1;
+			font-size: $p - 1;
 		}
 		@include break(md){
 			font-size: $p;
@@ -100,11 +159,31 @@ p {
 
 	&.txt18 {
 		$p: 18px;
+		@extend .roblight;
+		margin:0;
+		position: relative;
+		
 		@include break(xs){
 			font-size: $p;
 		}
 		@include break(sm){
-			font-size: ($p)-1;
+			font-size: $p - 1;
+		}
+		@include break(md){
+			font-size: $p;
+		}
+	}
+
+	&.txt20 {
+		$p: 20px;
+		margin:0;
+		position: relative;
+		
+		@include break(xs){
+			font-size: $p;
+		}
+		@include break(sm){
+			font-size: $p - 1;
 		}
 		@include break(md){
 			font-size: $p;
@@ -114,11 +193,31 @@ p {
 	&.txt23 {
 		$p: 23px;
 		@extend .roblight;
+		margin:0;
+		position: relative;
+		
 		@include break(xs){
 			font-size: $p;
 		}
 		@include break(sm){
-			font-size: ($p)-1;
+			font-size: $p - 1;
+		}
+		@include break(md){
+			font-size: $p;
+		}
+	}
+
+	&.txt30 {
+		$p: 30px;
+		@extend .roblight;
+		margin:0;
+		position: relative;
+		
+		@include break(xs){
+			font-size: $p -2;
+		}
+		@include break(sm){
+			font-size: $p -2;
 		}
 		@include break(md){
 			font-size: $p;

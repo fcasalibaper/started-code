@@ -1,0 +1,37 @@
+// Easing para Carousel onslide
+.carousel {
+	.item {
+		//@include transition(all 350ms $ease-out-quad);
+	}
+
+	&-control {
+		background-image: none !important;		
+	  &.left, &.right {
+	  	@include opacity(1);
+	  	span {
+	  		$px : 40px;
+	  		font-size: $px;
+	  		width: $px;
+			  height: $px;	
+			  margin-top: -($px/2);
+	  		position: absolute;
+			  top: 50%;
+			  z-index: 5;
+			  display: inline-block;
+			  color: red;
+	  	}
+	  }	  
+		&.left {
+			span {				
+				left: 20%;
+				margin-left: -15px;
+			}
+		}
+		&.right {
+			span {				
+				right: 20%;
+				margin-right: -15px;
+			}
+		}
+	}
+}

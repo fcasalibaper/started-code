@@ -1,17 +1,13 @@
-////////////////////////////////////
-// Ultima actualización 27/07/2015//
-////////////////////////////////////
-
 .cFull {
 	width: auto;
-	//height: auto;
+	height: auto;
 	overflow: hidden;
 	position: relative;
 }
 @media (max-width:1265px) {
 	.cFull {
 		width: auto;
-		//height: auto;
+		height: auto;
 		overflow: hidden;
 		position: relative;
 	}
@@ -25,9 +21,6 @@
 .mauto {
 	margin: auto;
 }
-.dblock {
-	display: block;
-}
 a:active, a:focus {
 	@include transition(all 350ms $ease-out-cubic);
 	text-decoration: none;
@@ -35,6 +28,9 @@ a:active, a:focus {
 html,body {	
 	min-height: 100%;
 	height: 100%;
+}
+body {
+  font-size: 14px;
 }
 .wrap {
 	position: relative;
@@ -51,6 +47,22 @@ html,body {
 		display:table-cell;
 		vertical-align:middle;
 	}
+}
+// backgrounds
+@mixin bg($background) {
+	background:$background
+}
+@mixin bgp($background-position) {
+	background-position:$background-position
+}
+@mixin bgi($background-image) {
+	background-image:url($background-image)
+}
+@mixin bgc($background-color) {
+	background-color:$background-color
+}
+@mixin bgs($background-size) {
+	background-size:$background-size
 }
 @mixin background-size($valor) {
 	-webkit-background-size: $valor;
@@ -81,9 +93,6 @@ html,body {
   white-space: nowrap;
   text-overflow: $overflow; // values are: clip, ellipsis, or a string
 }
-@mixin text-shadow($h:1px, $v:1px, $blur:2px, $color:$negro) {
-	text-shadow: $h $v $blur $color;
-}
 // BORDER-RADIUS
 @mixin border-radius ( $value: 3px ) {
   -webkit-border-radius: $value;
@@ -94,7 +103,6 @@ html,body {
   -moz-background-clip: padding;
   background-clip: padding-box;
 }
-
 // OPACITY
 @mixin opacity($value){
   $ie-value: $value * 100;
@@ -102,14 +110,12 @@ html,body {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$ie-value+")";
   filter: alpha(opacity=$ie-value);
 }
-
 // BOX-SHADOW
 @mixin box-shadow( $horiz : .5em , $vert : .5em , $blur : 0px , $spread : 0px , $color : #000000 ){
   -webkit-box-shadow: $horiz $vert $blur $spread $color;
   -moz-box-shadow: $horiz $vert $blur $spread $color;
   box-shadow: $horiz $vert $blur $spread $color;
 }
-
 // DEGRADADO
 @mixin deg ($deg, $deg2) {
 	background: $deg;
@@ -120,7 +126,6 @@ html,body {
 	background: -o-linear-gradient($deg, $deg2);
 	background: linear-gradient($deg, $deg2);
 }
-
 // MEDIAQUERIES
 @mixin break($point) {
   @if $point == xs {
@@ -136,7 +141,6 @@ html,body {
     @media (min-width: 1200px)  { @content; }
   }
 }
-
 // TOOLS
 // tooltips
 @mixin hui_tooltip($content: attr(data-tooltip), $direction: top) {
@@ -208,13 +212,22 @@ html,body {
 }
 
 /* Alinea todo al centro en mobile va en block */
-.alignCenter {
-	@include break(xs){
-		display: block		
-	}
-	@include break(sm){
-		@include display(flex);
-		@include justify-content(center);
-		@include align-items(center);
-	}	
+.alignCenter {	
+	@include display(flex);
+	@include justify-content(center);
+	@include align-items(center);	
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@mixin text-shadow($horizOffset, $vertOffset, $blur, $color) {
+  -webkit-text-shadow: $horizOffset $vertOffset $blur $color;
+  -moz-text-shadow: $horizOffset $vertOffset $blur $color;
+  -ms-text-shadow: $horizOffset $vertOffset $blur $color; /* IE 10+ */
+  -o-text-shadow: $horizOffset $vertOffset $blur $color;
+  text-shadow: $horizOffset $vertOffset $blur $color;
 }

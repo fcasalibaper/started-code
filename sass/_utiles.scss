@@ -1,22 +1,21 @@
-
 .modulo {	
 	position: relative;
-	$paddTB		: 6px;
-	$paddLR		: 3px;
+	$paddTB		: 70px;
+	$paddLR		: 0;
 
-	$paddTBxs	: 3px;
-	$paddLRxs	: 0;
+	$paddTBxs	: 35px;
+	$paddLRxs	: 15px;
 	@include break(xs){
 		padding:$paddTBxs $paddLRxs $paddTBxs $paddLRxs;
 	}
 	@include break(sm){
-		padding:$paddTB $paddLR 0 $paddLR;
+		padding:$paddTB $paddLR $paddTB $paddLR;
 	}
 	@include break(md){
-		padding:$paddTB $paddLR 0 $paddLR;
+		padding:$paddTB $paddLR $paddTB $paddLR;
 	}
 	@include break(lg){
-		padding:$paddTB $paddLR 0 $paddLR;
+		padding:$paddTB $paddLR $paddTB $paddLR;
 	}
 
 	&-50 {
@@ -32,16 +31,55 @@
 		@include break(lg){
 			padding:$paddTB/2 $paddLR 0 $paddLR;
 		}
+	}
 
+	&-mitad {
+		@include break(xs){
+			padding:$paddTBxs $paddLRxs $paddTBxs $paddLRxs;
+		}
+		@include break(sm){
+			padding:$paddTB/2 $paddLR/2 $paddTB/2 $paddLR/2;
+		}
+		@include break(md){
+			padding:$paddTB/2 $paddLR/2 $paddTB/2 $paddLR/2;
+		}
+		@include break(lg){
+			padding:$paddTB/2 $paddLR/2 $paddTB/2 $paddLR/2;
+		}
+	}
+	&-tercera {
+		@include break(xs){
+			padding:$paddTBxs $paddLRxs $paddTBxs $paddLRxs;
+		}
+		@include break(sm){
+			padding:$paddTB/2.5 $paddLR $paddTB/2.5 $paddLR;
+		}
+		@include break(md){
+			padding:$paddTB/2.5 $paddLR $paddTB/2.5 $paddLR;
+		}
+		@include break(lg){
+			padding:$paddTB/2.5 $paddLR $paddTB/2.5 $paddLR;
+		}
 	}
 }
 
 .fixrow {
-	&-13 {
-		$m: -12.5px;
+	&-8 {
+		$m: -8px;
 		@include break(xs){
-			margin-right: ($m)+5;
-			margin-left: ($m)+5;	
+			margin-right: $m;
+			margin-left: $m;	
+		}
+		@include break(sm){
+			margin-right: $m;
+			margin-left: $m;
+		}
+	}
+	&-13 {
+		$m: -13px;
+		@include break(xs){
+			margin-right: $m + 5;
+			margin-left: $m + 5;	
 		}
 		@include break(sm){
 			margin-right: $m;
@@ -52,8 +90,8 @@
 	&-25 {
 		$m: -25px;
 		@include break(xs){
-			margin-right: ($m)+25;
-			margin-left: ($m)+25;	
+			margin-right: $m + 25;
+			margin-left: $m + 25;	
 		}
 		@include break(sm){
 			margin-right: $m;
@@ -70,99 +108,32 @@
 	width:100%;
 	height:100%;
 	overflow:visible;
-	background:#0057a8 url('../images/preloader.svg') no-repeat center center;	
+	background:#0057a8 url('../images/preloader.svg') no-repeat center center;
+	&.preloader_individuos {
+		background-color: #00B7D7;
+	}
+	&.preloader_empresas {
+		background-color: #0057A7;
+	}	
+	&.preloader_fest {
+		background-color: $gris;
+		@include display(flex);
+		@include justify-content(center);
+		@include align-items(center);
+		i.icon-personal {
+			position: relative;
+			font-size: 3em;
+			top: -60px;
+		}
+	}
 }
-// .js div#preloader {
-// 	&.preloader_individuos {
-// 		background-color: #00B7D7;
-// 	}
-// 	&.preloader_empresas {
-// 		background-color: #0057A7;
-// 	}	
-// }
 
 .bg{
-	// escala de grises
-	&-gris1 {
-		background-color: $gris1;
-	}
-	&-gris2 {
-		background-color: $gris2;
-	}
-	&-gris3 {
-		background-color: $gris3;
-	}
-	&-gris4 {
-		background-color: $gris4;
-	}
-	&-gris5 {
-		background-color: $gris5;
-	}
-	&-gris6 {
-		background-color: $gris6;
-	}	
-	// colores
-	&-cyan {
-		background-color: $cyan;
-	}
-	&-magenta {
-		background-color: $magenta;
-	}
-	&-amarillo {
-		background-color: $amarillo;
-	}
-	&-verde {
-		background-color: $verde;
-	}
-	&-violeta {
-		background-color: $violeta;
-	}
 	&-transparent {
 		background-color: transparent;
 	}	
 }
-// fin bgs
 
-.c{
-	&-gris1 {
-		color: $gris1;
-	}
-	&-gris2 {
-		color: $gris2;
-	}
-	&-magenta {
-		color: $magenta;
-	}
-	&-amarillo {
-		color: $amarillo;
-	}
-	&-verde {
-		color: $verde;
-	}
-	&-violeta {
-		color: $violeta;
-	}
-	&-cyan {
-		color: $cyan;
-	}
-	&-blanco {
-		color: $blanco;
-	}
-	&-gristxt {
-		color: $gris1;
-	}
-}
-// fin colors
-
-.bd {
-	&-verde {
-		border: 1px solid $verde;
-	}
-	&-top-verde {
-		border-top: 1px solid lighten($verde, 5%);	
-	}
-}
-// border
 .p {
 	&-0 {
 		padding: 0;
@@ -202,51 +173,26 @@
 }
 // fin margins
 
-// hr {
-// 	&.hrcyan {
-// 		border-top: 1px $cyan;		
-// 	}
-// 	&.hrmagenta {
-// 		border-top: 1px solid $magenta;		
-// 	}
-// 	&.hrvioleta {
-// 		border-top: 1px solid $violeta;		
-// 	}
-// 	&.hrverde {
-// 		border-top: 1px solid $verde;		
-// 	}
-// 	&.hramarillo {
-// 		border-top: 1px solid $amarillo;		
-// 	}
-// }
 
-// Columnas
+//////////////
+// Columnas //
+//////////////
+
 .col2x1 {
-	$padd:0.5em;
-	&.col1 {
-		@include break(xs){
+	$padd2x1:1.5%;
+	&.col1 {		
 			padding-left: 0;
-			padding-right: 0;	
-		}
-		@include break(sm){
-			padding-left: 0;
-			padding-right: $padd;
-		}
+			padding-right: $padd2x1;		
 	}
 	&.col2 {
-		@include break(xs){
 			padding-right: 0;
-			padding-left: 0;	
-		}
-		@include break(sm){
-			padding-right: 0;
-			padding-left: $padd;
-		}
+			adding-left: $padd2x1;		
 	}
 }
 // fin col2x1
+
 .col3x1 {
-	$padd:0.5em;
+	$padd:1.5%;
 	&.col1 {
 		@include break(xs){
 			padding-right: $padd;
@@ -280,8 +226,9 @@
 	}
 }
 // fin col2x1
+
 .col4x1 {
-	$padd:0.5em;
+	$padd:10px;
 	&.col1 {
 		@include break(xs){
 			padding-left: 0;
@@ -316,72 +263,52 @@
 // fin col4x1
 
 .toolresponsive {
-	pointer-events: none;
-	@include border-bottom-radius(50%);
-	@include border-left-radius(50%);
-	background-color: rgba($negro,0.2);
+	@include opacity(1);
+	color:$blanco !important;
+	background-color: rgba(#0065ff,1);
+	@extend .roblight;
+	pointer-events: none;	
 	text-align: center;
 	box-shadow:1px 1px 7px rgba($negro, 0.2);
 	position: fixed;
 	font-size: 23px;
-	padding: 15px;
-	top: 0;
-	right: 0;
+	padding: 15px;	
 	z-index: 999999999999999999999999;
+
+	&.top-right {
+		@include border-bottom-radius(50%);
+		@include border-left-radius(50%);
+		top: 0;
+		right: 0;
+	}
+	&.top-left {
+		@include border-bottom-radius(50%);
+		@include border-right-radius(50%);
+		top: 0;
+		left: 0;
+	}
+	&.bottom-left {
+		@include border-top-radius(50%);
+		@include border-right-radius(50%);
+		bottom: 0;
+		left: 0;
+	}
+	&.bottom-right {
+		@include border-top-radius(50%);
+		@include border-left-radius(50%);
+		bottom: 0;
+		right: 0;
+	}
 	.titl {
 		font-size: 23px;
 		padding-top: 5px;	
 		&.bdceleste {
-			@include bdt(1px solid rgba(lightblue,0.8));		
-			@extend .upper;
+			border-top: 1px solid rgba(lightblue,0.8);
+			text-transform: uppercase;
 			text-align: center;
 		}
 	}
 	.nro {
 		text-align: center;
-	}
-}
-
-.toolresponsive {
-	@include opacity(1);
-	color:$blanco !important;
-	background-color: rgba($cyan,1);
-	@extend .roblight;
-}
-
-// Easing para Carousel onslide
-.carousel {
-	.item {
-		@include transition(all 350ms $ease-out-quad);
-	}
-
-	&-control {
-		span,i {
-			width: 30px;
-	    height: 30px;
-	    margin-top: -15px;
-	    font-size: 30px;
-	    position: absolute;
-	    top: 50%;
-	    z-index: 5;
-	    display: inline-block;
-		}
-
-		&.left {
-			  left: 0;
-		    right: auto;			
-    	span,i {
-    		left: 50%;
-    		margin-left: -10px;
-    	}
-		}
-		&.right {
-		    right: 0;
-    		left: auto;
-			span,i {
-				right: 50%;
-    		margin-right: -10px;
-			}
-		}
 	}
 }
